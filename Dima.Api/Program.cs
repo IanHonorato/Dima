@@ -31,21 +31,37 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-//Requisição -> Header e Body
-//Get, Post, Put e Delete - CRUD
-//Get (Não tem body)
-//POST, PUT, DELETE (Com body)
-// JSON - JavaScript Object Notation
-
-//Endpoints
-//Usar Convernções de Mercado
-//https://localhost:0000/
-//Os endpoints geralmente estão no plural Ex: O category seria /Categories
 app.MapPost(
     "/v1/categories", 
     (CreateCategoryRequest request, ICategoryHandler handler) => handler.CreateAsync(request))
     .WithName("Categories: Create")
     .WithSummary("Cria uma nova categoria")
-    .Produces<Response<Category>>();
+    .Produces<Response<Category?>>();
+
+app.Run();
+
+app.MapPut(
+    "/v1/categories/{id}",
+    (long id, UpdateCategoryRequest request, ICategoryHandler handler) =>
+    {
+        request.Id = id;
+        handler.UpdateAsync(request);
+    })
+    .WithName("Categories: Update")
+    .WithSummary("Atualiza uma categoria")
+    .Produces<Response<Category>?>();
+
+app.Run();
+
+app.MapDelete(
+    "/v1/categories/{id}",
+    (long id, DeleteCategoryRequest request, ICategoryHandler handler) =>
+    {
+        request.Id = id;
+        handler.DeleteAsync(request);
+    })
+    .WithName("Categories: Delete")
+    .WithSummary("Delete uma categoria")
+    .Produces<Response<Category?>>();
 
 app.Run();

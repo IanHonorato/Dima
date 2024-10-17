@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Api\\Dima.Api.csproj": {}
+    "D:\\Projetos\\Balta\\Dima\\Dima.Api\\Dima.Api.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Api\\Dima.Api.csproj": {
+    "D:\\Projetos\\Balta\\Dima\\Dima.Api\\Dima.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Api\\Dima.Api.csproj",
+        "projectUniqueName": "D:\\Projetos\\Balta\\Dima\\Dima.Api\\Dima.Api.csproj",
         "projectName": "Dima.Api",
-        "projectPath": "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Api\\Dima.Api.csproj",
+        "projectPath": "D:\\Projetos\\Balta\\Dima\\Dima.Api\\Dima.Api.csproj",
         "packagesPath": "C:\\Users\\ian06\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Api\\obj\\",
+        "outputPath": "D:\\Projetos\\Balta\\Dima\\Dima.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -27,15 +27,14 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nexus3.tjmt.jus.br/repository/nuget_hosted": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Core\\Dima.Core.csproj": {
-                "projectPath": "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Core\\Dima.Core.csproj"
+              "D:\\Projetos\\Balta\\Dima\\Dima.Core\\Dima.Core.csproj": {
+                "projectPath": "D:\\Projetos\\Balta\\Dima\\Dima.Core\\Dima.Core.csproj"
               }
             }
           }
@@ -44,6 +43,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,18 +92,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Core\\Dima.Core.csproj": {
+    "D:\\Projetos\\Balta\\Dima\\Dima.Core\\Dima.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Core\\Dima.Core.csproj",
+        "projectUniqueName": "D:\\Projetos\\Balta\\Dima\\Dima.Core\\Dima.Core.csproj",
         "projectName": "Dima.Core",
-        "projectPath": "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Core\\Dima.Core.csproj",
+        "projectPath": "D:\\Projetos\\Balta\\Dima\\Dima.Core\\Dima.Core.csproj",
         "packagesPath": "C:\\Users\\ian06\\.nuget\\packages\\",
-        "outputPath": "D:\\Projetos\\Balta.io\\.Net FullStack\\Dima\\Dima.Core\\obj\\",
+        "outputPath": "D:\\Projetos\\Balta\\Dima\\Dima.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -115,8 +119,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nexus3.tjmt.jus.br/repository/nuget_hosted": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -128,6 +131,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -149,7 +157,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
