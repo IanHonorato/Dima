@@ -38,30 +38,59 @@ app.MapPost(
     .WithSummary("Cria uma nova categoria")
     .Produces<Response<Category?>>();
 
-app.Run();
-
 app.MapPut(
     "/v1/categories/{id}",
-    (long id, UpdateCategoryRequest request, ICategoryHandler handler) =>
+    async (long id, UpdateCategoryRequest request, ICategoryHandler handler) =>
     {
         request.Id = id;
-        handler.UpdateAsync(request);
+        return await handler.UpdateAsync(request);
     })
     .WithName("Categories: Update")
     .WithSummary("Atualiza uma categoria")
     .Produces<Response<Category>?>();
 
-app.Run();
-
 app.MapDelete(
     "/v1/categories/{id}",
-    (long id, DeleteCategoryRequest request, ICategoryHandler handler) =>
+    async (long id, ICategoryHandler handler) =>
     {
-        request.Id = id;
-        handler.DeleteAsync(request);
+        var request = new DeleteCategoryRequest
+        {
+            Id = id,
+            UserId = "test@balta.io"
+        };
+        return await handler.DeleteAsync(request);
     })
     .WithName("Categories: Delete")
     .WithSummary("Delete uma categoria")
     .Produces<Response<Category?>>();
+
+app.MapGet(
+    "/v1/categories/{id}",
+    async (long id, ICategoryHandler handler) =>
+    {
+        var request = new GetCategoryByIdRequest
+        {
+            Id = id,
+            UserId = "test@balta.io"
+        };
+        return await handler.GetByIdAsync(request);
+    })
+    .WithName("Categories: Get by Id")
+    .WithSummary("Retorna uma categoria")
+    .Produces<Response<Category?>>();
+
+app.MapGet(
+    "/v1/categories",
+    async (ICategoryHandler handler) =>
+    {
+        var request = new GetAllCategoriesRequest
+        {
+            UserId = "test@balta.io"
+        };
+        return await handler.GetAllAsync(request);
+    })
+    .WithName("Categories: Get all")
+    .WithSummary("Retorna todas as categorias de um usuário")
+    .Produces<PagedResponse<List<Category?>>>();
 
 app.Run();
