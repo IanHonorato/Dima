@@ -13,7 +13,7 @@ namespace Dima.Core.Responses
             PageSize = pageSize;            
         }
 
-        public PagedResponse(TData? data, int code = Configuration.DefaultStatusCode, string message = null) : base(data, code, message)
+        public PagedResponse(TData? data, int code = Configuration.DefaultStatusCode, string? message = null) : base(data, code, message)
         {
         }
 
