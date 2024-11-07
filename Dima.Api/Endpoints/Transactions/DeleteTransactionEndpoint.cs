@@ -1,9 +1,11 @@
 ﻿using Dima.Api.Common.Api;
+using Dima.Api.Models;
 using Dima.Core.Handlers;
 using Dima.Core.Models;
 using Dima.Core.Requests.Categories;
 using Dima.Core.Requests.Transactions;
 using Dima.Core.Responses;
+using System.Security.Claims;
 
 namespace Dima.Api.Endpoints.Transactions
 {
@@ -18,11 +20,11 @@ namespace Dima.Api.Endpoints.Transactions
               .Produces<Response<Transaction?>>();
 
 
-        private static async Task<IResult> HandleAsync(ITransactionHandler handler, long id)
+        private static async Task<IResult> HandleAsync(ClaimsPrincipal user, ITransactionHandler handler, long id)
         {
             var request = new DeleteTransactionRequest
             {
-                UserId = "test@balta.io",
+                UserId = user.Identity?.Name ?? string.Empty,
                 Id = id
             };
 

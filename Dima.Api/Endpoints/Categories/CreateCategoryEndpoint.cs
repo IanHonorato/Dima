@@ -3,6 +3,7 @@ using Dima.Core.Handlers;
 using Dima.Core.Models;
 using Dima.Core.Requests.Categories;
 using Dima.Core.Responses;
+using System.Security.Claims;
 
 namespace Dima.Api.Endpoints.Categories
 {
@@ -16,9 +17,9 @@ namespace Dima.Api.Endpoints.Categories
             .WithOrder(1)
             .Produces<Response<Category?>>();
 
-        public static async Task<IResult> HandleAsync(ICategoryHandler handler, CreateCategoryRequest request)
+        public static async Task<IResult> HandleAsync(ClaimsPrincipal user, ICategoryHandler handler, CreateCategoryRequest request)
         {
-            request.UserId = "test@balta.io";
+            request.UserId = user.Identity?.Name ?? string.Empty;
             var result = await handler.CreateAsync(request);
 
             return result.IsSuccess ? TypedResults.Created($"/{result.Data?.Id}", result) : TypedResults.BadRequest(result);
